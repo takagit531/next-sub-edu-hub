@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -64,7 +64,7 @@ const Auth = () => {
   };
 
   return (
-    <div 
+    <div
       className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
       style={{
         backgroundImage: `url(${heroBg})`,
@@ -73,7 +73,7 @@ const Auth = () => {
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
-      
+
       {/* Animated particles */}
       <div className="absolute top-20 left-10 w-3 h-3 bg-primary/30 rounded-full animate-float" />
       <div className="absolute bottom-40 right-20 w-4 h-4 bg-secondary/30 rounded-full animate-float" style={{ animationDelay: '0.5s' }} />
@@ -81,12 +81,14 @@ const Auth = () => {
 
       <Card className="w-full max-w-md p-8 shadow-elegant relative z-10 backdrop-blur-sm bg-card/95 animate-scale-in border-2 border-primary/10">
         <div className="text-center mb-8 animate-fade-in">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <PlayCircle className="w-8 h-8 text-primary animate-pulse" />
-            <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              オンライン講座
-            </span>
-          </div>
+          <Link to="/">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <PlayCircle className="w-8 h-8 text-primary animate-pulse" />
+              <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                オンライン講座
+              </span>
+            </div>
+          </Link>
           <div className="inline-block mb-2">
             <Sparkles className="w-12 h-12 text-primary animate-bounce" />
           </div>
@@ -139,8 +141,8 @@ const Auth = () => {
             {loading
               ? "処理中..."
               : isSignUp
-              ? "アカウント作成"
-              : "ログイン"}
+                ? "アカウント作成"
+                : "ログイン"}
           </Button>
         </form>
 
