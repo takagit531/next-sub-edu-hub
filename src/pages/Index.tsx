@@ -32,7 +32,7 @@ const Index = () => {
   const plans = [
     {
       name: "ベーシック",
-      price: "¥9,800",
+      price: "¥9,900",
       period: "/月",
       features: [
         "全30本の講義動画",
@@ -44,7 +44,7 @@ const Index = () => {
     },
     {
       name: "プレミアム",
-      price: "¥29,800",
+      price: "¥29,900",
       period: "/3ヶ月",
       features: [
         "全30本の講義動画",
